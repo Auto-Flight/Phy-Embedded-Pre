@@ -16,26 +16,28 @@ The data files required for this project have been uploaded to Baidu Netdisk. Pl
 Based on our tests, this project works perfectly on both **Ubuntu 18.04** and **Ubuntu 20.04**.
 
 #### 1. Create a Virtual Environment
-*Note: Make sure to activate the environment before installing the dependencies.*
 ```bash
+# Note: Make sure to activate the environment before installing the dependencies.*
 conda create -n your_env_name python=3.9
 conda activate your_env_name
 pip install numpy opencv-python matplotlib scipy tqdm ultralytics rospkg
 pip install torch torchvision torchaudio
+```
 
-#### 2. Process Bag Files to Generate Dataset
+#### 2. Process Bag Files to Generate Datase
+```bash
 # Note: Please modify the bag file path inside the script before running
 python generate_data.py
 
 # Verify the validity and data flow of the dataset
 python debug_dataflow.py
+```
 
 #### 3. Train and Evaluate the Prediction Network
-
-Note: The `--data_dirs` argument is required. Please replace the path with your actual dataset directory.
-
-**To train the model:**
 ```bash
+# Note: The `--data_dirs` argument is required. Please replace the path with your actual dataset directory.
+
+# To train the model:
 # Basic training
 python train_eval.py --mode train --data_dirs ./Data_1.5s/dataset_processed_01
 
@@ -48,9 +50,12 @@ python train_eval.py --mode test --data_dirs ./Data_1.5s/dataset_processed_01 --
 
 # Evaluate and generate visualization results
 python train_eval.py --mode test --data_dirs ./Data_1.5s/dataset_processed_01 --save_dir ./checkpoints_ours --visualize
+```
 
 #### 4. ROS Deployment and Visualization
-Open a terminal to play the ROS bag file:
+```bash
+# Open a terminal to play the ROS bag file:
 rosbag play new_collect.bag
 
 python deploy_ros_vis.py
+```
