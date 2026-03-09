@@ -6,9 +6,17 @@ The data files required for this project have been uploaded to Baidu Netdisk. Pl
 * **Data File**: `data_collect_01.bag`
 * **Download Link**:[Click here to download from Baidu Netdisk](https://pan.baidu.com/s/1-21Q_zwMervypL9VfSFevg)
 * **Extraction Code**: `0413`
+## Note: Bag File Contents (ROS Topics)
+The provided `.bag` file records the following essential ROS topics:
+
+| Data Type | ROS Topic | Description |
+| :--- | :--- | :--- |
+| **Human Odometry** | `/vicon/odom/target` | Ground truth odometry of the human target (provided by Vicon). |
+| **Drone Odometry** | `/vicon/odom` | Ground truth odometry of the drone (provided by Vicon). |
+| **RGB Image** | `/camera/color/image_raw` | Raw color images from the onboard camera. |
+| **Depth Image** | `/camera/depth/image_rect_raw` | Rectified depth images from the onboard camera. |
 
 > 💡 **Tip**: It is recommended to copy the extraction code before clicking the link, as the system will usually fill it in automatically.
-
 ---
 
 ### 📂 Usage Instructions
